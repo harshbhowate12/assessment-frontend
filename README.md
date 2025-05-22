@@ -48,6 +48,16 @@ index.js
    git clone https://github.com/your-username/assessment-frontend.git
    cd assessment-frontend
 
+2. Install dependencies:
+
+   npm install
+
+3. Update backend API base URL in your code (axios.get() or .post() paths if needed).   
+   
+4. Start Development Server:
+   
+   npm start
+
 
 ## Features
 - Question navigation panel with color-coded states
