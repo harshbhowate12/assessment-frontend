@@ -7,10 +7,10 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchUsersWithScores = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/admin/responses");
+        const response = await axios.get("https://assessment-backend-dp85.onrender.com/api/admin/responses");
         const usersWithScores = await Promise.all(
           response.data.map(async (user) => {
-            const scoreRes = await axios.get(`http://localhost:5001/api/admin/score/${user.userId}`);
+            const scoreRes = await axios.get(`https://assessment-backend-dp85.onrender.com/api/admin/score/${user.userId}`);
             return {
               ...user,
               score: scoreRes.data.score,

@@ -16,7 +16,7 @@ const Assessment = () => {
     const userId = "testuser123";
 
     useEffect(() => {
-        axios.get("http://localhost:5001/api/questions")
+        axios.get("https://assessment-backend-dp85.onrender.com/api/questions")
             .then((res) => setQuestions(res.data))
             .catch(() => alert("Failed to load questions."));
     }, []);
@@ -59,7 +59,7 @@ const Assessment = () => {
             selectedOption: selectedAnswers[q.id] || "",
         }));
 
-        axios.post("http://localhost:5001/api/responses/submit", { userId, answers })
+        axios.post("https://assessment-backend-dp85.onrender.com/api/responses/submit", { userId, answers })
             .then((res) => alert(res.data.message))
             .catch((err) => alert(err.response?.data?.error || "Submission failed"));
     };
